@@ -1,7 +1,7 @@
 
 all: encode_weak_cisco
 
-encode_weak_cisco:
+encode_weak_cisco: encode_weak_cisco.cpp
 	g++ -Wall encode_weak_cisco.cpp -o encode_weak_cisco
 
 test: vimtest
