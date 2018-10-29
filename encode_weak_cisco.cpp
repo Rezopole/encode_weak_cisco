@@ -39,7 +39,7 @@ string encrypt (const string &s, int salt) {
 
     o << setw (2) << setfill ('0') << salt ;
 
-    for (int i=0 ; i<s.size() ; i++) {
+    for (size_t i=0 ; i<s.size() ; i++) {
 	int j = (i+salt) % 53;
 	int cc = ((int)s[i]) ^ (int)cisco_const[j];
 	o << setw (2) << setfill ('0') << setbase(16) << uppercase << cc;
