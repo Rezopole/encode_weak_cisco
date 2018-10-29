@@ -62,7 +62,7 @@ int main (int nb, char ** cmde) {
 	    if (strncmp("--salt=", cmde[i], 7) == 0) {
 		salt = atoi (cmde[i]+7) % 16;
 	    } else if ((strcmp ("-h", cmde[i]) ==0) || (strncmp("--help", cmde[i], 6) == 0)) {
-		cerr << cmde[0] << " : encodes passphrases using weak reversible cisco algorythm" << endl
+		cerr << cmde[0] << " : encodes passphrases using weak reversible cisco algorithm" << endl
 		     << "       " << cmde[0] << " [ --salt=SALT ] [ --help ] [ -- ] ... passphrases ..." << endl
 		    ;
 		exit (0);
