@@ -1,0 +1,48 @@
+.\" {
+.\"
+.\"  encode_weak_cisco, encodes passphrase like the old "7" weak and reversible cisco crypto algorithm 
+.\"  Copyright (C) 2016-2020 Jean-Daniel Pauget <jdpauget@rezopole.net>
+.\"  
+.\"  This program is free software; you can redistribute it and/or
+.\"  modify it under the terms of the GNU General Public License
+.\"  as published by the Free Software Foundation; either version 2
+.\"  of the License, or (at your option) any later version.
+.\"  
+.\"  This program is distributed in the hope that it will be useful,
+.\"  but WITHOUT ANY WARRANTY; without even the implied warranty of
+.\"  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+.\"  GNU General Public License for more details.
+.\"  
+.\"  You should have received a copy of the GNU General Public License
+.\"  along with this program; if not, write to the Free Software
+.\"  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+.\"
+.\" }
+.TH "encode_weak_cisco-@ENCODE_WEAK_CISCO_VERSION@" "1" "2020" "jd" "encode_weak_cisco utility"
+.SH NAME
+encode_weak_cisco \- encode some data using the old, reversible, cisco way ; that's nice for anssible because it is predictable.
+.br
+.SH SYNOPSIS
+.B encode_weak_cisco
+.RI "[" --salt=XXXX "] [" --help "] [ ... " data_to_encode " ... ]"
+
+for each data given by parameters
+.B encode_weak_cisco
+encodes with Cisco reversible encoding algorithm, using either the supplied salt (for reproductible results) or using a randomly generated salt.
+
+If real strong security is needed, one should not use this tool : this encoding is
+.I reversible
+and any passphrase could be decyphered very easily.
+
+The only reason for using this cypher is in order get a workaround for tools that may compare uploaded configurations with locally generated configurations ; using a fully predictable encoding prevent from endlessly uploading the configuration whereas other cyphers would change any passphrase at every iteration.
+.SH SEE ALSO
+.RB "(1)" "md5" ", (1)" md5sum ", (1)" shasum
+.SH BUGS
+There may have some, please submit them to
+.B sysadm@rezopole.net
+.SH AUTHOR
+Jean-Daniel Pauget (jdpauget@rezopole.net) et Al.
+.SH MANPAGE VERSION
+@ENCODE_WEAK_CISCO_VERSION@
+
+

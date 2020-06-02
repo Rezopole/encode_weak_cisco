@@ -8,10 +8,16 @@ useful when pushing configurations with ansible.
 encode_weak_cisco --salt=GIVENSALT the_passphrase-to_encode
  ```
 
-## Installation
+## Compilation / Installation
+the following should bring you to a traditional build tree :
 ```bash
-> make
-> sudo make install
+   libtoolize --force --copy && aclocal && autoheader && automake --add-missing --copy && autoconf
+```
+then the traditional build sequence :
+```bash
+    ./configure
+    make
+    make install
 ```
 
 ## Prerequisites

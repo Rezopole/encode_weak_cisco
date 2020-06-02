@@ -1,8 +1,7 @@
-
 // {
 //
 //  encode_weak_cisco, encodes passphrase like the old "7" weak and reversible cisco crypto algorithm 
-//  Copyright (C) 2016 Jean-Daniel Pauget <jdpauget@rezopole.net>
+//  Copyright (C) 2016-2020 Jean-Daniel Pauget <jdpauget@rezopole.net>
 //  
 //  This program is free software; you can redistribute it and/or
 //  modify it under the terms of the GNU General Public License
@@ -29,6 +28,8 @@
 #include <iomanip>
 #include <string>
 #include <sstream>
+
+#include "config.h"
 
 using namespace std;
 
@@ -63,6 +64,7 @@ int main (int nb, char ** cmde) {
 		salt = atoi (cmde[i]+7) % 16;
 	    } else if ((strcmp ("-h", cmde[i]) ==0) || (strncmp("--help", cmde[i], 6) == 0)) {
 		cerr << cmde[0] << " : encodes passphrases using weak reversible cisco algorithm" << endl
+		     << "       version " << ENCODE_WEAK_CISCO_VERSION << endl
 		     << "       " << cmde[0] << " [ --salt=SALT ] [ --help ] [ -- ] ... passphrases ..." << endl
 		    ;
 		exit (0);
