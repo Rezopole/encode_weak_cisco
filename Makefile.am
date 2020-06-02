@@ -44,6 +44,6 @@ distclean-local:
 	rm -f config.h.in~
 	rm -rf debian
 	rm -f Makefile
-	rm -f asdig*.deb
+	rm -f encode-weak-cisco*.deb
 
 
